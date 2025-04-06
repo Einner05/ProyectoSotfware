@@ -16,7 +16,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 100%;                
+                height: 100%;
             }
             .login-cart{
                 max-width: 300px;
@@ -25,17 +25,17 @@
                 border-radius: 1rem;
                 box-shadow: 0 0 20px rgba(0,0,0,0.1);
                 background-color: var(--pico-background-color);
-                
-                
+
+
             }
             .error, .logout{
                 text-align: center;
                 margin-bottom: 1rem;
                 padding: 0.75rem;
-                border-radius: 0.5rem;                
+                border-radius: 0.5rem;
             }
             .error{
-                
+
                 background-color: #ffe0e0;
                 color: #d60000;
             }
@@ -49,40 +49,46 @@
         <main>
             <div class="login-cart">
 
-              <h2 style="text-align:center">Login</h2>
-              
-            <!-- Mensaje error -->
-            <div  id="errorMensaje" class="contrast" style="display:none;"> 
-                Usuario o contraseña incorrecta.
-            </div>
-            <div id="logoutMensaje" class="logout" style="display: none;">
-                Sesión cerrada correctamente
+                <h2 style="text-align:center">Login</h2>
+
+                <!-- Mensaje error -->
+                <div  id="errorMensaje" class="contrast" style="display:none;"> 
+                    Usuario o contraseña incorrecta.
+                </div>
+                <div id="logoutMensaje" class="logout" style="display: none;">
+                    Sesión cerrada correctamente
+                </div>
+
+                <form action="login" method="post">
+                    <label for="usuario">usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+
+                    <label for="contraseña">contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" required>
+
+                    <button type="submit">Ingresar</button>
+                </form>
+                <div style="text-align:center; margin-top: 1rem;">
+                    <a href="registro.html">¿No tienes cuenta? Regístrate</a>
+                </div>
+
             </div>
             
-            <form action="login" method="post">
-                <label for="usuario">usuario:</label>
-                <input type="text" id="usuario" name="usuario" required>
-
-                <label for="contraseña">contraseña:</label>
-                <input type="password" id="contraseña" name="contraseña" required>
-
-                <button type="submit">Ingresar</button>
-            </form>
         </main>
         <script>
-            
+
             const params = new URLSearchParams(window.location.search);
-            
+
             //mostrar el error si la URL tiene ?error=1 y no hay logout=1
-            if (params.get('error') === '1' && params.get('logout')!=='1') {
+            if (params.get('error') === '1' && params.get('logout') !== '1') {
                 document.getElementById('errorMensaje').style.display = 'block';
             }
-            
+
             //mostrar mensaje de cierre de sesión 
-            if (params.get('logout')==='1'){
+            if (params.get('logout') === '1') {
                 document.getElementById('logoutMensaje').style.display = 'block';
             }
-                
+
 
         </script>
     </body>

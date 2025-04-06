@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>        
+        <meta charset="UTF-8">
+        <title>Registro de Usuario</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+
+    </head>
+    <body>
+        <main class="container" style="max-width: 400px; margin: auto; padding-top: 50px;">
+            <h2>Resgistro de Usuarios</h2>
+            
+            <form action="registro" method="post">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+                
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" name="contraseña" required>
+                
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <button type="submit">Registrarse</button>
+            </form>
+        </main>
+    </body>
+</html>
